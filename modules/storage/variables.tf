@@ -1,10 +1,13 @@
-variable "disk name" {
-  description = "The name of the compute instance"
+variable "name" {
+  description = "The name of the disk"
   type        = string
 }
 
-variable "machine_type" {
-  description = "The machine type of the instance"
+variable "size" {
+  description = "The size of the disk"
   type        = string
 }
-
+variable "type" {
+  description = "The type of the disk"
+  type        = string
+}
