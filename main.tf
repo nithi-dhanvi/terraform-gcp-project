@@ -23,3 +23,8 @@ module "compute" {
   network        = module.network.network_self_link
   subnetwork     = module.network.subnets[0]
 }
+module "compute" {
+  source         = "./modules/stoprage"
+  name  = "disk-01"
+  size   = 10
+  type = 
