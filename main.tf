@@ -34,7 +34,7 @@ module "storage" {
 # Attach Persistent Disk to an Existing Instance
 resource "google_compute_attached_disk" "attach_additional_storage" {
  instance = "example-instance"                 # Replace with the name of your instance
- zone     = google_compute_disk.disk-01.zone
+ zone     = google_compute_disk.additional_storage.zone
  disk     = google_compute_disk.additional_storage.name
- device_name = "additional-disk"
+ device_name = "disk-01"
 }
