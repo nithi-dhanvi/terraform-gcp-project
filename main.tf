@@ -18,7 +18,7 @@ module "network" {
 module "compute" {
   source         = "./modules/compute"
   instance_name  = "example-instance"
-  machine_type   = "n1-standard-1"
+  machine_type   = "e2-micro"
   zone           = "us-central1-a"
   network        = module.network.network_self_link
   subnetwork     = module.network.subnets[0]
