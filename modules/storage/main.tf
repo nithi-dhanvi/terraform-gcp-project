@@ -1,8 +1,11 @@
 # Define a Persistent Disk
 resource "google_compute_disk" "additional_storage" {
-  name  = "additional-disk"
-  size  = 50                   # Disk size in GB
-  type  = "pd-standard"        # Options: pd-standard, pd-ssd, pd-balanced
+  name = "var.name"
+ # name  = "additional-disk"
+ # size  = 50    
+  size = var.size    # Disk size in GB
+  type = var.type
+  #type  = "pd-standard"        # Options: pd-standard, pd-ssd, pd-balanced
 
   labels = {
     environment = "test"       # Add custom labels
