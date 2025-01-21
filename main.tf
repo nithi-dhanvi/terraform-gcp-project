@@ -24,7 +24,7 @@ module "compute" {
   subnetwork     = module.network.subnets[0]
 }
 module "storage" {
-  source         = "./modules/stoprage"
+  source         = "./modules/storage"
   name  = "disk-01"
   size   = 10
   type = "pd-standard"
