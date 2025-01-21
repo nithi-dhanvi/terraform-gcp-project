@@ -23,18 +23,21 @@ module "compute" {
   network        = module.network.network_self_link
   subnetwork     = module.network.subnets[0]
 }
+
 module "storage" {
   source         = "./modules/storage"
   name  = "disk-01"
   size   = 10
   type = "pd-standard"
-  zone           = "us-central1-a"
+  env = "dev01"
+  zone     = "us-central1-a"
+  instance = "example-instance"
 }
 
 # Attach Persistent Disk to an Existing Instance
-resource "google_compute_attached_disk" "attach_additional_storage" {
- instance = "example-instance"                 # Replace with the name of your instance
- zone     = google_compute_disk.additional_storage.zone
- disk     = google_compute_disk.additional_storage.name
- device_name = "disk-01"
-}
+#resource "google_compute_attached_disk" "attach_additional_storage" {
+# instance = "example-instance"                 # Replace with the name of your instance
+# zone     = google_compute_disk.additional_storage.zone
+# disk     = google_compute_disk.disk-01.id
+# device_name = "disk-01"
+#}

@@ -22,3 +22,5 @@ variable "subnetwork" {
   description = "The name of the subnetwork"
   type        = string
 }
+
+

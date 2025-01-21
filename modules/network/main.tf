@@ -10,3 +10,4 @@ resource "google_compute_subnetwork" "subnets" {
   region        = var.subnets[count.index].region
   network       = google_compute_network.default.id
 }
+
